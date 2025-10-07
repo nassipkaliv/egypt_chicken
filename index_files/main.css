@@ -1994,23 +1994,21 @@ html.is-loading body {
   position: relative;
   width: 900px;
   height: 450px;
-  overflow: hidden;          
+  overflow: hidden;     
   background: #0f1324;
-    
   isolation: isolate;
 }
 
-.game-container::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border: 40px solid transparent;
-    border-image-source: url(../pics/border.png);
-    border-image-slice: 70;
-    border-image-repeat: round;
-    pointer-events: none;
-    margin: -18px;
-    z-index: 10;
+.game-border{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      
+  pointer-events: none;
+  z-index: 100;
+  border-radius: inherit;
+  display: block;
 }
 .track{
   position: absolute;
@@ -2157,10 +2155,6 @@ button { touch-action: manipulation; }
     height: 60vh; 
 		border: 5px solid transparent;       /* чуть выше, чтобы курица и фишки влезли */
   }
-
-	.game-container::before {
-		margin: -25px;
-	}
 
   .chicken {
     width: 65px;  
