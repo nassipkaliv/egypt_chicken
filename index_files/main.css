@@ -1995,7 +1995,7 @@ html.is-loading body {
   width: 900px;
   height: 450px;
   overflow: hidden;     
-  background: #0f1324;
+  background: transparent;
   isolation: isolate;
 }
 
