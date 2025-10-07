@@ -406,7 +406,7 @@ html .ro {
   font-family: var(--font-family);
   position: absolute;
   right: -3rem;
-  top: 5.5rem;
+  top: 6rem;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -1630,9 +1630,9 @@ html.is-loading body {
 
 	.torch {
     position: absolute;
-    left: -8%;
-    width: 20%;
-    bottom: 7%;
+    left: 0%;
+    width: 12%;
+    bottom: 0%;
 	}
 
 	.cowboy {
