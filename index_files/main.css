@@ -396,9 +396,9 @@ html .ro {
 }
 
 .torch {
-	position: absolute;
-  left: 4%;
-  width: 13%;
+  position: absolute;
+  left: -10%;
+  width: 32%;
   bottom: 0%;
 }
 
@@ -1638,8 +1638,9 @@ html.is-loading body {
 	.cowboy {
     position: absolute;
     bottom: 0;
-    right: 0%;
-    width: 40%;
+    left: 50%;
+		transform: translateX(-50%);
+    width: 50%;
     z-index: 104;
 	}
 }
@@ -1980,131 +1981,102 @@ html.is-loading body {
   opacity: .6;
 }
 
-/* включение эффекта */
 .sparkles.active{ opacity: 1; }
 .sparkles.active .sparkles-layer{ animation-play-state: running; }
 
 @keyframes sparkles-fall{
   from { background-position-y: 0;    }
-  to   { background-position-y: 900px; } /* > высоты контейнера => ощущение падения */
+  to   { background-position-y: 900px; } 
 }
 
+
+
+.frame-border{
+  position: relative;
+  display: inline-block;
+  padding: 22px;        
+  background: url("../pics/border.png") no-repeat center / 100% 100%;
+  pointer-events: none;
+	margin-top: 25px;      
+}
+.frame-border > .game-container{ pointer-events:auto; }
 
 .game-container{
   position: relative;
   width: 900px;
   height: 450px;
-  overflow: hidden;     
+  overflow: hidden;
   background: transparent;
   isolation: isolate;
 }
 
-.game-border{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;      
-  pointer-events: none;
-  z-index: 100;
-  border-radius: inherit;
-  display: block;
-}
 .track{
   position: absolute;
   left: 0;
-  bottom: -20px;
+  bottom: -20px;            
   width: 1260px;
   height: 1100px;
   background-image: url("../pics/background.png");
   background-repeat: no-repeat;
   background-position: left bottom;
   background-size: auto 100%;
-  transform: translate(0,0);
+  transform: translate3d(0,0,0);
   transition: transform .45s ease;
   pointer-events: none;
   z-index: 1;
 }
 
-.lanes{ position: absolute; inset: 0; pointer-events:none; }
-.lane{
-  position: absolute;
-  width: 100px; height: 100px;
-  transform: translateX(-50%); 
-}
-.gold-egg{
-	bottom: 800px;
-	width: 160px;
-}
-
-.lane.gold-egg img {
-  position: relative;
-  z-index: 2;
-}
-
-
 .overlay{
   position:absolute; inset:0; z-index:3; pointer-events:none;
-  contain: layout paint;          
+  contain: layout paint;
 }
-
-.chicken {
-  position: absolute;
-  left: 0; bottom: 0;
-  width: 100px;
-  height: auto;
-  transform: translateZ(0);
-  will-change: left, bottom;      
-  backface-visibility: hidden;
-  contain: layout paint;           
-}
-
-.overlay{
-  contain: layout paint; 
-}
-
 .chicken{
-  transform: translateZ(0);       
-  will-change: transform;         
+  position:absolute;
+  left:0; bottom:0;
+  width:100px; height:auto;
+  transform: translateZ(0);
+  will-change: left, bottom;
   backface-visibility: hidden;
-  contain: layout paint;         
 }
 
+.lanes{ position:absolute; inset:0; pointer-events:none; }
+.lane{
+  position:absolute;
+  width:100px; height:100px;
+  transform: translateX(-50%);
+}
+.gold-egg{ bottom:800px; width:160px; }
+.lane.gold-egg img{ position:relative; z-index:2; }
 
+.lanes{ perspective: 800px; transform-style: preserve-3d; }
 .lane img{
-  width: 100%;
-  display: block;
+  width:100%;
+  display:block;
   transform-origin: center;
   backface-visibility: hidden;
   transition: transform 200ms ease;
+  transform: rotateY(0);            
+  will-change: transform;
 }
 .lane img.flip-out{ transform: rotateY(90deg); }
-.lane img.flip-in { transform: rotateY(0deg);   }
+.lane img.flip-in { transform: rotateY(0deg);  }
 
-
-@keyframes chickenCelebrate {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-18px); }
+@keyframes chickenCelebrate{
+  0%,100%{ transform: translateY(0); }
+  50%    { transform: translateY(-18px); }
 }
+.chicken.celebrate{ animation: chickenCelebrate .3s ease-in-out infinite; }
 
-.chicken.celebrate {
-  animation: chickenCelebrate 0.3s ease-in-out infinite;
-}
-
-
-.track, .overlay, .chicken, .lanes, .lane img {
-  backface-visibility: hidden;
+.track,.overlay,.chicken,.lanes,.lane img{
+  backface-visibility:hidden;
   transform: translateZ(0);
   will-change: transform;
   contain: layout paint;
 }
 
-.chicken { will-change: transform; }
+#game{ touch-action:none; overscroll-behavior:contain; }
+button{ touch-action:manipulation; }
 
-.track { will-change: transform; }
-
-#game { touch-action: none; overscroll-behavior: contain; }
-button { touch-action: manipulation; }
 
 @media (max-width: 540px) {
   .game-container, .track, .chicken { image-rendering: auto; } 
@@ -2409,7 +2381,7 @@ button { touch-action: manipulation; }
 			}
 
 			#animation_container {
-				margin-bottom: 8rem;
+				margin-bottom: 9.5rem;
 			}
 
 			.btns .button {

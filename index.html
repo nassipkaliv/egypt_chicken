@@ -146,32 +146,33 @@
                   <span id="balance">20 EUR</span>
                 </div>
               </div>
-              <div class="game-container" id="game">
-                <div class="track" id="track">
-                  <div class="spawn" style="left:100px;"></div>
-                
-                  <div class="lanes">
-                    <div class="lane" style="left:235px; bottom: 310px;"><img src="pics/coef1.png"  alt="1.50x"></div>
-                    <div class="lane" style="left:390px; bottom: 410px;"><img src="pics/coef2.png"  alt="1.85x"></div>
-                    <div class="lane" style="left:553px; bottom: 510px;"><img src="pics/coef3.png"  alt="1.95x"></div>
-                    <div class="lane" style="left:714px; bottom: 610px;"><img src="pics/coef4.png"  alt="2.00x"></div>
-                    <div class="lane" style="left:865px;  bottom: 715px;"><img src="pics/coef5.png"  alt="2.10x"></div>
-                    <div class="lane gold-egg" style="left:1045px;  bottom: 790px;"><img src="pics/gold-egg.png" alt="2.20x"></div>
-                  </div>
-                </div>
-              
-                <div class="sparkles" id="sparkles">
-                  <div class="sparkles-layer fast"></div>
-                  <div class="sparkles-layer slow"></div>
-                </div>
-              
-                <div class="overlay">
-                  <img style="left: -30px;" class="chicken" src="pics/chicken.png" alt="Chicken">
-                </div>
+              <!-- РАМКА ВОКРУГ ПОЛЯ -->
+<div class="frame-border">
+  <div class="game-container" id="game">
+    <div class="track" id="track">
+      <div class="spawn" style="left:100px;"></div>
 
-                  <img class="game-border" src="pics/border.png" alt="" aria-hidden="true" decoding="async">
+      <div class="lanes">
+        <div class="lane" style="left:235px; bottom:310px;"><img src="pics/coef1.png"  alt="1.50x"></div>
+        <div class="lane" style="left:390px; bottom:410px;"><img src="pics/coef2.png"  alt="1.85x"></div>
+        <div class="lane" style="left:553px; bottom:510px;"><img src="pics/coef3.png"  alt="1.95x"></div>
+        <div class="lane" style="left:714px; bottom:610px;"><img src="pics/coef4.png"  alt="2.00x"></div>
+        <div class="lane" style="left:865px; bottom:715px;"><img src="pics/coef5.png"  alt="2.10x"></div>
+        <div class="lane gold-egg" style="left:1045px; bottom:790px;"><img src="pics/gold-egg.png" alt="2.20x"></div>
+      </div>
+    </div>
 
-              </div>
+    <div class="sparkles" id="sparkles">
+      <div class="sparkles-layer fast"></div>
+      <div class="sparkles-layer slow"></div>
+    </div>
+
+    <div class="overlay">
+      <img class="chicken" src="pics/chicken.png" alt="Chicken" style="left:-30px;">
+    </div>
+  </div>
+</div>
+
 
             </div>
             <div class="btns btns_ready visible" id="btns_ready">
@@ -234,7 +235,7 @@
               <source srcset="pics/fire.png" type="image/webp">
               <img src="./pics/fire.png" alt="bottom" class="fire">
             </picture>
-            <img src="pics/torch.png" alt="torch" class="torch">
+            <img src="pics/torch.webp" alt="torch" class="torch">
           </div>
         </div>
         <img src="pics/cowboy.png" alt="cowboy" class="cowboy">
@@ -432,7 +433,7 @@ const CONFIG = {
     SPARKLES_TO_POPUP_DELAY: 1100,
     TRACK_FALL_PX:     [100, 205, 310, 415, 510, 620],
     CHICKEN_BOTTOM_PX: [-22, -18, -18,  -28,  -18,  -18],
-    START_POS: { mode: 'absolute', left: 30, bottom: 10 }
+    START_POS: { mode: 'absolute', left: 50, bottom: 10 }
   }
 };
 function pickConfig(){ return matchMedia('(max-width:540px)').matches ? CONFIG.mobile : CONFIG.desktop; }
