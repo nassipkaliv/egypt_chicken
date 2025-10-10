@@ -396,9 +396,9 @@ html .ro {
 }
 
 .torch {
-  position: absolute;
-  left: -10%;
-  width: 32%;
+	position: absolute;
+  left: 4%;
+  width: 13%;
   bottom: 0%;
 }
 
@@ -1629,10 +1629,10 @@ html.is-loading body {
 	}
 
 	.torch {
-    position: absolute;
-    left: 0%;
-    width: 12%;
-    bottom: 0%;
+	  position: absolute;
+	  left: -10%;
+	  width: 32%;
+	  bottom: 0%;
 	}
 
 	.cowboy {
