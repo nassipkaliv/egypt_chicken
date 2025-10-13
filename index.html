@@ -153,11 +153,11 @@
       <div class="spawn" style="left:100px;"></div>
 
       <div class="lanes">
-        <div class="lane" style="left:235px; bottom:310px;"><img src="pics/coef1.png"  alt="1.50x"></div>
-        <div class="lane" style="left:390px; bottom:410px;"><img src="pics/coef2.png"  alt="1.85x"></div>
-        <div class="lane" style="left:553px; bottom:510px;"><img src="pics/coef3.png"  alt="1.95x"></div>
-        <div class="lane" style="left:714px; bottom:610px;"><img src="pics/coef4.png"  alt="2.00x"></div>
-        <div class="lane" style="left:865px; bottom:715px;"><img src="pics/coef5.png"  alt="2.10x"></div>
+        <div class="lane" style="left:241px; bottom:315px;"><img src="pics/coef1.png"  alt="1.50x"></div>
+        <div class="lane" style="left:405px; bottom:410px;"><img src="pics/coef2.png"  alt="1.85x"></div>
+        <div class="lane" style="left:563px; bottom:510px;"><img src="pics/coef3.png"  alt="1.95x"></div>
+        <div class="lane" style="left:722px; bottom:610px;"><img src="pics/coef4.png"  alt="2.00x"></div>
+        <div class="lane" style="left:882px; bottom:715px;"><img src="pics/coef5.png"  alt="2.10x"></div>
         <div class="lane gold-egg" style="left:1045px; bottom:790px;"><img src="pics/gold-egg.png" alt="2.20x"></div>
       </div>
     </div>
@@ -436,6 +436,7 @@ const CONFIG = {
     START_POS: { mode: 'absolute', left: 50, bottom: 10 }
   }
 };
+
 function pickConfig(){ return matchMedia('(max-width:540px)').matches ? CONFIG.mobile : CONFIG.desktop; }
 let CFG = pickConfig();
 let isMobile = matchMedia('(max-width:540px)').matches;
@@ -626,7 +627,7 @@ const pre = s=>{ const i=new Image(); i.decoding='async'; i.src=s; try{i.decode&
 
 addEventListener('load', () => {
   if (isMobile){
-    const bottoms = [250, 350, 460, 565, 675, 785];
+    const bottoms = [260, 360, 467, 568, 678, 785];
     document.querySelectorAll('.lane').forEach((lane,i)=>{
       if (bottoms[i]!=null) lane.style.bottom = bottoms[i] + 'px';
     });
