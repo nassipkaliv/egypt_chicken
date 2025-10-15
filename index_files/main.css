@@ -1609,14 +1609,14 @@ html.is-loading body {
   bottom: -5%;
   max-width: 80%;
   height: auto;
-  left: 33%;
+  left: 43%;
   transform: translateX(-60%);
 }
 
 .bg-bottom .fire-right {
   position: absolute;
   bottom: 0;
-  max-width: 60%;
+  max-width: 35%;
   height: auto;
   left: 75%;
   transform: translateX(0%);
@@ -1630,7 +1630,7 @@ html.is-loading body {
 
 @media(max-width: 620px) {
 	.bg-blue {
-		margin-top: -1.5rem;
+		margin-top: 0rem;
 	}
 
 	.bg-bottom .fire {
