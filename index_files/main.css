@@ -1604,13 +1604,22 @@ html.is-loading body {
   z-index: 101;
 }
 
-.bg-bottom .fire {
+.bg-bottom .fire-left {
   position: relative;
-  bottom: 0;
-  max-width: 50%;
+  bottom: -5%;
+  max-width: 80%;
   height: auto;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 33%;
+  transform: translateX(-60%);
+}
+
+.bg-bottom .fire-right {
+  position: absolute;
+  bottom: 0;
+  max-width: 60%;
+  height: auto;
+  left: 75%;
+  transform: translateX(0%);
 }
 
 @media(max-width: 1040px) {
