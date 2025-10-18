@@ -1630,7 +1630,7 @@ html.is-loading body {
 
 @media(max-width: 620px) {
 	.bg-blue {
-		margin-top: 0rem;
+		margin-top: -1rem;
 	}
 
 	.bg-bottom .fire {
